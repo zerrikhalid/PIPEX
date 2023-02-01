@@ -13,6 +13,13 @@
 #include "pipex_bonus.h"
 #include "../libft/libft.h"
 
+void	errors(void)
+{
+	ft_putendl_fd("Bad Arguments!", 2);
+	ft_putendl_fd("./pipex file1 cmd1 cmd2 file2", 2);
+	exit(1);
+}
+
 char	**get_env(char *p_index)
 {
 	char	*sub;

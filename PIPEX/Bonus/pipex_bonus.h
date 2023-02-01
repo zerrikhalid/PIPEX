@@ -19,22 +19,15 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <errno.h>
-# include <sys/wait.h>
+//# include <sys/wait.h>
 # include <sys/types.h>
 # include <errno.h>
 
 typedef struct s_pipex_bonus
 {
-	int		i;
-	int		j;
-	int		k;
-	int		**p_fd;
-	int		fd;
-	int		in;
-	int		out;
-	int		cmd;
-	pid_t	pid;
-	pid_t	pid1;
+	int	start;
+	int	fd[2];
+	int pid;	
 }t_pipex_bonus;
 
 typedef struct s_pipex_b
