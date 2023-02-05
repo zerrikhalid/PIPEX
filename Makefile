@@ -6,7 +6,7 @@
 #    By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 22:39:02 by kzerri            #+#    #+#              #
-#    Updated: 2023/01/23 03:45:11 by kzerri           ###   ########.fr        #
+#    Updated: 2023/02/05 02:15:36 by kzerri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,19 +17,32 @@ RM			=	rm -rf
 SRCS		=	Mandatory/pipex.c \
 				Mandatory/pipex_help.c \
 				libft/ft_split.c \
+				libft/free_tab.c \
 				libft/ft_putendl_fd.c \
 				libft/ft_strjoin.c \
 				libft/ft_strlen.c \
 				libft/ft_strchr.c \
-				libft/ft_strnstr.c
-SRCS_BONUS	= 
-OBJS		= ${SRCS:.c=.o}
+				libft/ft_strncmp.c
+SRCS_BONUS	=	Bonus/pipex_bonus.c \
+				Bonus/pipex_bonus_help.c \
+				libft/ft_split.c \
+				libft/free_tab.c \
+				libft/ft_putendl_fd.c \
+				libft/ft_putstr_fd.c \
+				libft/ft_strjoin.c \
+				libft/ft_strlen.c \
+				libft/ft_strchr.c \
+				libft/ft_strncmp.c \
+				get_next_line/get_next_line.c \
+				get_next_line/get_next_line_utils.c \
+				
+OBJS		= $(SRCS:.c=.o)
 
-OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o) 
 
-$(NAME)		: $(SRCS)
+$(NAME)		: $(SRCS) $(Mandatory/pipex.h)
 			$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-
+	
 all			:	$(NAME)
 
 clean		:
@@ -40,5 +53,5 @@ fclean		: clean
 
 re			: fclean all
 
-bonus 		: $(SRCS_BONUS)
+bonus 		: $(SRCS_BONUS) $(Bonus/pipex_bonus.h)
 			$(CC) $(CFLAGS) $(SRCS_BONUS) -o $(NAME)

@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   free_tab.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 11:22:38 by kzerri            #+#    #+#             */
-/*   Updated: 2023/01/22 08:25:34 by kzerri           ###   ########.fr       */
+/*   Created: 2023/02/05 01:57:06 by kzerri            #+#    #+#             */
+/*   Updated: 2023/02/05 02:13:17 by kzerri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnstr(char *haystack, char *needle, size_t len)
+void	free_all(char **std)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
 
 	i = 0;
-	if (!haystack || !needle)
-		return (1);
-	if (len == 0 && !haystack)
-		return (1);
-	if (*(needle) == '\0')
-		return (1);
-	while (*(haystack + i) && i < len)
+	if (!std)
+		return ;
+	while (std[i])
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j] && (i + j < len))
-			j++;
-		if (*(needle + j) == '\0')
-			return (0);
+		free(std[i]);
 		i++;
 	}
-	return (1);
+	free(std);
 }

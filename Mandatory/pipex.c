@@ -6,7 +6,7 @@
 /*   By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 04:20:51 by kzerri            #+#    #+#             */
-/*   Updated: 2023/01/23 10:55:26 by kzerri           ###   ########.fr       */
+/*   Updated: 2023/02/05 02:13:31 by kzerri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	p_execute(char *av, char **env)
 	if (execve(path, args, NULL) == -1)
 	{
 		perror("Error executing command ");
+		free_all(args);
 		exit(1);
 	}
 }
@@ -93,7 +94,7 @@ int	main(int ac, char **av, char **env)
 			waitpid(p.pid1, NULL, 0);
 			waitpid(p.pid2, &p.status, 0);
 			if (WIFEXITED(p.status))
-				exit(WEXIT01STATUS(p.status));
+				exit(WEXITSTATUS(p.status));
 		}
 	}
 }

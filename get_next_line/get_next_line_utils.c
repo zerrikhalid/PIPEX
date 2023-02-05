@@ -6,7 +6,7 @@
 /*   By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 02:33:55 by kzerri            #+#    #+#             */
-/*   Updated: 2023/01/23 03:17:22 by kzerri           ###   ########.fr       */
+/*   Updated: 2023/02/04 04:38:29 by kzerri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoins(char const *s1, char const *s2)
 	j = 0;
 	if (!s1 && !s2)
 		return (NULL);
-	i = (ft_strlen(s1) + ft_strlen(s2));
+	i = (ft_strlength(s1) + ft_strlength(s2));
 	p = (char *)malloc(sizeof(char) * (i + 1));
 	if (!p)
 		return (NULL);
@@ -76,7 +76,7 @@ char	*ft_strdup(const char *s1)
 
 	if (!s1)
 		return (NULL);
-	i = ft_strlen(s1);
+	i = ft_strlength(s1);
 	j = 0;
 	p = (char *)malloc(sizeof(char) * (i + 1));
 	if (!p)

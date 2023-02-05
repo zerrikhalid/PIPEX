@@ -6,7 +6,7 @@
 /*   By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 04:16:00 by kzerri            #+#    #+#             */
-/*   Updated: 2023/01/21 03:40:53 by kzerri           ###   ########.fr       */
+/*   Updated: 2023/02/05 01:56:32 by kzerri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	errors(void);
 void	p_first_child(char **av, int *p_fd, char **env);
 void	p_second_child(char **av, int *p_fd, char **env);
 int		get_file(char *file, int sig);
-//void	free_memory(char **paths);
 char	**get_env(char *p_index);
 char	*get_path(char *command, char **env);
 

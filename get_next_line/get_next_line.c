@@ -6,7 +6,7 @@
 /*   By: kzerri <kzerri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 02:33:24 by kzerri            #+#    #+#             */
-/*   Updated: 2023/01/23 03:17:40 by kzerri           ###   ########.fr       */
+/*   Updated: 2023/02/04 03:34:40 by kzerri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*next_line(char *buffer)
 		return (free(buffer), NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	buff = (char *)malloc(sizeof(char) * (ft_strlen(buffer) - i) + 1);
+	buff = (char *)malloc(sizeof(char) * (ft_strlength(buffer) - i) + 1);
 	if (!buff)
 		return (free(buffer), NULL);
 	if (buffer[i] == '\n')
